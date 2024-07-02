@@ -85,7 +85,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
   var password = document.getElementById("password").value;
 
   // Validación de las credenciales (puedes ajustar esto según tus necesidades)
-  if (username === "admin" && password === "password123") {
+  if (username === "admin" && password === "admin") {
     // Redirigir a la página de admin
     window.location.href = "admin.html";
   } else {
