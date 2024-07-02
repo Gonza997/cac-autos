@@ -1,0 +1,585 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Nunito&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+input,
+textarea,
+button {
+  font-size: inherit;
+}
+
+/* GENERALES */
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  max-width: 100%;
+  margin: auto;
+  font-family: var(--FF-N);
+  font-size: var(--FS);
+  color: var(--BLANCO);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a:any-link {
+  color: var(--BLANCO);
+}
+
+/* VARIABLES */
+:root {
+  /* FONTS */
+  --FS: 1.5rem;
+  --FF-N: "Nunito", sans-serif;
+  --FF-B: "Bebas Neue", sans-serif;
+  --FF-P: "Pacifico", sans-serif;
+  /* COLORES */
+  --ROJO: #ff4c4c;
+  --NEGRO: #262626;
+  --BLANCO: whitesmoke;
+  /* PADDING */
+  --PADDING: 0.5rem;
+}
+
+/* HEADER */
+.header i {
+  font-size: 150%;
+}
+
+.header__h1 {
+  font-family: var(--FF-B);
+  letter-spacing: 3px;
+  text-wrap: nowrap;
+}
+.header__div {
+  width: 45vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#subtitulo {
+  font-style: italic;
+}
+
+.header {
+  padding-inline: var(--PADDING);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--NEGRO);
+  box-shadow: 0px 3px 3px var(--NEGRO);
+  flex-wrap: wrap;
+  position: fixed;
+  width: 100%;
+  max-width: 3200px;
+  z-index: 1;
+}
+
+.header i {
+  font-size: 1.5em;
+}
+
+.header__h1 {
+  font-family: var(--FF-B);
+  letter-spacing: 3px;
+}
+
+#subtitulo {
+  font-style: italic;
+}
+
+.header__ul {
+  display: flex;
+  width: 45vw;
+  justify-content: space-around;
+  font-size: 70%;
+  align-items: center;
+}
+
+.header a {
+  display: inline-block;
+  padding-block: var(--PADDING);
+  background-color: gray;
+  border-radius: 25px;
+  padding: var(--PADDING);
+  text-align: center;
+}
+
+.header a:hover {
+  background-color: var(--BLANCO);
+  color: var(--NEGRO);
+}
+
+.header__button {
+  display: none;
+  background-color: var(--NEGRO);
+}
+
+/* SECCION 1 */
+.primero {
+  background-image: url(img/bmw.jpg);
+  padding: var(--PADDING);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.primero__h2 {
+  font-size: clamp(3.5rem, 13vw, 10rem);
+  font-family: var(--FF-B);
+  letter-spacing: 3px;
+  position: absolute;
+  bottom: 10%;
+  font-style: italic;
+}
+
+.primero__p--segundo {
+  transition: all 1s 0.5s;
+  opacity: 0;
+  color: var(--ROJO);
+  transform: translateY(-100%);
+  display: block;
+  font-style: italic;
+}
+
+.primero:hover .primero__p--segundo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SECCION 2 */
+.segundo {
+  min-height: 90vh;
+  padding: 10px;
+}
+
+.coches {
+  color: var(--NEGRO);
+  text-align: center;
+  font-family: var(--FF-B);
+}
+
+.contenerdorAutos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.elemento {
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid var(--NEGRO);
+  color: var(--NEGRO);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-flow: column;
+}
+
+.elemento img {
+  max-height: 200px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* MEDIA Q */
+@media screen and (max-width: 768px) {
+  .header__ul {
+    flex-flow: column;
+    gap: 0;
+    width: 100%;
+  }
+  .contenerdorAutos {
+    grid-template-columns: 1fr 1fr;
+  }
+  .header__div {
+    width: 80vw;
+  }
+  .header li {
+    width: 100%;
+    border: 1px solid var(--NEGRO);
+  }
+
+  .header__button {
+    display: flex;
+  }
+
+  .header a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header__nav {
+    display: none;
+    width: 100%;
+    top: 70px;
+    background-color: var(--NEGRO);
+  }
+
+  .primero {
+    background-position: 90%;
+  }
+
+  .primero__h2 {
+    bottom: 20%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__nav {
+    display: unset !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .primero {
+    background-position: 85%;
+  }
+  .contenerdorAutos {
+    grid-template-columns: 1fr;
+  }
+  .header__div {
+    flex-flow: column;
+    width: 70vw;
+  }
+
+  .primero__h2 {
+    bottom: 30%;
+  }
+}
+
+/*tercera sección*/
+.tercera {
+  min-height: 85vh;
+  background-image: url(img/BMW\ M3.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  font-family: var(--FF-N);
+  color: #000000;
+}
+
+/* Contáctenos*/
+
+#titulo {
+  text-align: center;
+}
+
+.subtitulo_Seccion3 {
+  font-style: normal;
+  text-decoration: underline;
+}
+
+/*Formularios*/
+
+.formularios {
+  max-width: 700px;
+  border: 2px solid black;
+  padding: 10px;
+  margin: auto;
+  border-radius: 20px;
+  font-family: var(--FF-N);
+  font-style: italic;
+  font-size: 20px;
+  background-color: var(--ROJO);
+  opacity: 0.87;
+  color: #000000;
+  font-weight: bold;
+}
+
+.tercera #formulario input {
+  font-size: 14px;
+  border-radius: 8px;
+  font-family: var(--FF-N);
+}
+
+#input_auto {
+  width: 100% !important;
+  font-size: 14px;
+  border-radius: 8px;
+  font-family: var(--FF-N);
+}
+
+#input_email {
+  width: 100% !important;
+  font-size: 14px;
+  border-radius: 8px;
+  font-family: var(--FF-N);
+}
+
+#input_mensaje {
+  width: 100% !important;
+  font-size: 14px;
+  border-radius: 8px;
+  font-family: var(--FF-N);
+}
+
+.datos {
+  height: 185px;
+}
+
+.auto {
+  height: 180px;
+}
+
+.mensaje {
+  height: 280px;
+}
+
+.colores {
+  text-decoration: none;
+}
+
+.plan {
+  text-decoration: none;
+}
+
+#btn_enviar {
+  border-radius: 12px;
+  font-size: 14px;
+  font-family: var(--FF-N);
+  font-style: italic;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin: auto;
+}
+
+#btn_enviar:hover {
+  background-color: #262626;
+  align-items: center;
+  color: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #25d366;
+}
+/* Sección 4 */
+
+.containerQS {
+  max-width: 3200px;
+  padding: 10px;
+  margin: 0px;
+  border-radius: 20px;
+}
+.cuarta {
+  background-color: var(--NEGRO);
+  padding: 0px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.cuarta h2 {
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+.parrafoQS {
+  flex: 1 1 60%;
+  color: #666;
+  line-height: 1.6;
+  padding-right: 30px;
+  margin: 30 30 30 30px;
+  box-sizing: border-box;
+  text-align: justify;
+  font-weight: 600;
+  font-size: 0.55em;
+  text-indent: 2em; /* Agrega sangría al inicio del párrafo */
+}
+.imagenQS {
+  flex: 1 1 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+/* seccion ADMIN */
+.admin,
+.altas,
+.listado,
+.modificar,
+.eliminar {
+  min-height: calc(100vh - 144px);
+  background-image: url(img/bmw.jpg);
+  display: grid;
+  place-content: center;
+}
+.admin h1 {
+  text-align: center;
+  font-family: var(--FF-B);
+  font-size: 300%;
+  letter-spacing: 0.5rem;
+}
+.admin__div {
+  width: 400px;
+}
+.admin a {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5em;
+  text-align: center;
+  background-color: gray;
+  border-radius: 25px;
+  margin-block: 0.3em;
+}
+.admin a:hover {
+  background-color: var(--BLANCO);
+  color: var(--NEGRO);
+}
+/* seccion ALTAS */
+
+.altas input,
+.modificar input {
+  width: 100%;
+  border: none;
+}
+.altas__div,
+.modificar__div {
+  background-color: hsla(0, 0%, 20%, 0.8);
+  padding: 0.5em;
+  border-radius: 25px;
+  max-width: 600px;
+}
+.altas__div div,
+.modificar__div div {
+  margin-block: 1rem;
+}
+.altas__div button,
+.modificar button,
+.eliminar button {
+  padding: 0.3em;
+  background-color: greenyellow;
+  border: none;
+}
+.altas__div a,
+.listado a,
+.modificar a,
+.eliminar a {
+  background-color: var(--ROJO);
+  padding: 0.2em;
+}
+/* seccion LISTADO */
+.listado__div,
+.eliminar__div {
+  background-color: hsla(0, 0%, 20%, 0.5);
+  padding: 0.5em;
+  border-radius: 25px;
+}
+.listado td,
+.listado th,
+.eliminar th,
+.eliminar td {
+  padding-inline: 0.5em;
+}
+.contenedor-centrado {
+  display: flex;
+  justify-content: center;
+}
+
+/* seccion MODIFICACIONES */
+.modificar__div {
+  margin-top: 80px;
+}
+
+/*Footer*/
+
+#footerbackground {
+  background-color: var(--NEGRO);
+}
+
+#tituloRS {
+  color: black;
+  text-align: center;
+  font-family: var(--FF-N);
+  font-style: italic;
+  font-weight: 800;
+}
+
+/*Íconos de redes sociales*/
+.contenedor {
+  margin: 0;
+  top: 140%;
+  left: 50%;
+  text-align: center;
+}
+
+.contenedor i {
+  text-align: center;
+  font-size: 25px;
+  color: black;
+  margin: 25px;
+  border-radius: 50%;
+  padding: 7.5px;
+  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.35);
+  transition: 0.5s ease;
+  background-color: white;
+}
+
+.fa-whatsapp:hover {
+  background-color: #25d366;
+  color: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 25px #25d366;
+}
+
+.fa-youtube:hover {
+  background-color: #e10600;
+  color: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 25px #e10600;
+}
+
+.fa-facebook:hover {
+  background-color: #3b5998;
+  color: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 25px #3b5998;
+}
+
+.fa-twitter:hover {
+  background-color: #00acee;
+  color: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 25px #00acee;
+}
+
+.fa-instagram:hover {
+  background-color: #cd486b;
+  color: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 25px #cd486b;
+}
+
+#Copyright {
+  color: black;
+  text-align: center;
+  font-family: var(--FF-N);
+  font-weight: 800;
+}
