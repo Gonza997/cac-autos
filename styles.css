@@ -32,8 +32,8 @@ li {
 body {
   max-width: 100%;
   margin: auto;
-  font-family: var(--FF-N);
-  font-size: var(--FS);
+  /*font-family: var(--FF-N1);*/
+  font-size: var(--FS1);
   color: var(--BLANCO);
 }
 
@@ -48,8 +48,8 @@ a:any-link {
 /* VARIABLES */
 :root {
   /* FONTS */
-  --FS: 1.5rem;
-  --FF-N: "Nunito", sans-serif;
+  --FS1: 1.5rem;
+  --FF-N1: "Nunito", sans-serif;
   --FF-B: "Bebas Neue", sans-serif;
   --FF-P: "Pacifico", sans-serif;
   /* COLORES */
