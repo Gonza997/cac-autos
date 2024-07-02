@@ -77,3 +77,20 @@ formulario.addEventListener("submit", (event) => {
     alert("Mensaje enviado correctamente");
   }
 });
+
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+  event.preventDefault(); // Evitar el envío del formulario
+
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // Validación de las credenciales (puedes ajustar esto según tus necesidades)
+  if (username === "admin" && password === "password123") {
+    // Redirigir a la página de admin
+    window.location.href = "admin.html";
+  } else {
+    alert("Credenciales incorrectas. Inténtalo de nuevo.");
+  }
+});
+
+
