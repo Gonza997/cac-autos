@@ -53,7 +53,7 @@ class Catalogo:
             Color VARCHAR(255) NOT NULL,
             precio DECIMAL(10, 2) NOT NULL,
             imagen_url VARCHAR(255),
-            proveedor VARCHAR(255))''')
+            proveedor INT(4))''')
         self.conn.commit()
 
         # Cerrar el cursor inicial y abrir uno nuevo con el parámetro dictionary=True
